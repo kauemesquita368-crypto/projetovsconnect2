@@ -103,6 +103,28 @@ function FormularioLogin() {
         <form onSubmit={enviarFormulario}>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} 
             placeholder="Digite seu email"/>
+
+            
+                <input type="password" value={senha} onChange={(e) => setSenha (e.target.value)} 
+                placeholder="Digite a senha">
+
+                    </input>
+            <button type="submit">
+
+                </button>
         </form>
     )
+}
+
+//Estado com arrays 
+const [listaItens, setListaItens] = useState([]);
+
+function adicionarItem(novoItem) {
+    setListaItens ([...listaItens, novoItem])
+}
+
+listaItens.push("React");
+
+function removerItens(itemParaRemover) {
+    setListaItens(listaItens.filter(item => item != itemParaRemover))
 }
